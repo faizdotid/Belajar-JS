@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" name="commentForm">
+        <label for="comment">
+            Comment: <input type="text" id="comment" name="comment">
+        </label>
+        <br>
+        <label for="from">
+            From:  <input type="text" name="from" id="from">
+        </label>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <table border="1" cellspacing="1" cellpadding="5" id="commandList">
+        <tr>
+            <th>Comment</th>
+            <th>From</th>
+        </tr>
+    </table>
+    <script>
+        document.forms['commentForm'].onsubmit = function(e) {
+            e.preventDefault();
+            // const comment = document.querySelector('input[name="comment"]').value;
+            // const from = document.getElementById('from').value;
+            // const commandList = document.getElementById('commandList');
+
+            // const newComment = document.createElement('p');
+            // newComment.textContent = `${comment} - ${from}`;
+            // commandList.appendChild(newComment);
+            // document.querySelector('form[name="commentForm"]').reset();
+            let nameFOrm = document.forms['commentForm'];
+            let comment = nameFOrm['comment'].value;
+            let from = nameFOrm['from'].value;
+            let commandList = document.getElementById('commandList');
+            let newComment = document.createElement('tr');
+            newComment.appendChild(document.createElement('td')).textContent = comment;
+            newComment.appendChild(document.createElement('td')).textContent = from;
+            commandList.appendChild(newComment);
+            nameFOrm.reset();
+        }
+    </script>
+</body>
+</html>

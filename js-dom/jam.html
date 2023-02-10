@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron">
+    <style>
+
+        .box {
+            font-family: 'Orbitron';
+            width: 600px;
+            height: 200px;
+            background-color: #eaea;
+            display: flex;
+            border-radius: 35px;
+            margin: 100px auto;
+            box-shadow: 10px -10px 5px 10px #000000;
+            flex-direction: row;
+            align-items: center;
+            padding: 10px;
+        }
+        #jam {
+            font-size: 100px;
+            color: white;
+            flex: 5;
+        }
+        #tgl {
+            flex: 1;
+        }
+        #tglisi {
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body bgcolor="purple">
+    <div class="box">
+        <p id="jam">
+        </p>
+        <div id="tgl">
+            <p id="tglisi">
+            </p>
+        </div>
+    </div>
+    <script>
+        function jam() {
+
+            hari = new Array("Minggu", "Senin", "Selasa", "Rabu", "Kamis", "Jumat", "Sabtu");
+            bulan = new Array("Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember");
+
+            const waktu = new Date();
+            let jam = waktu.getHours();
+            let menit = waktu.getMinutes();
+            let seconds = waktu.getSeconds();
+            let jhari = hari[waktu.getDay()];
+            let jbulan = bulan[waktu.getMonth()]; 
+            let jamMenit = jam + ":" + menit + ":" + seconds;
+            let fulltgl = jhari + "<br>" + jbulan + "<br>" + waktu.getFullYear();
+            document.getElementById("jam").textContent = jamMenit;
+            document.getElementById("tglisi").innerHTML = fulltgl;
+        }
+        window.setInterval(jam, 1000);
+    </script>
+</body>
+</html>

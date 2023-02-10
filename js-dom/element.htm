@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content">
+        
+    </div>
+    <script>
+        let content = document.getElementsByClassName('content')[0];
+        let newElement = document.createElement('p');
+        newElement.textContent = 'Hello World';
+        content.appendChild(newElement);
+        let duo = document.createElement('h1')
+        duo.textContent = 'Hello World';
+        content.appendChild(duo);
+    </script>
+</body>
+</html>

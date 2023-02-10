@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="menu">
+        <li id="first">1h</li>
+        <li id="second">2</li>
+        <li id="third">3</li>
+    </ul>
+    <script>
+        let menu = document.getElementById('menu');
+        let first = document.getElementById('first');
+        let second = document.getElementById('second');
+        let third = document.getElementById('third');
+        menu.removeChild(second);
+    </script>
+</body>
+</html>

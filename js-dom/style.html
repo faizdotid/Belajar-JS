@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" style="width: 100px; height: 100px; background-color: red;"></div>
+    <ul>
+        <li>red</li>
+        <li>green</li>
+        <li>blue</li>
+    </ul>
+    <script>
+        const box = document.getElementById('box');
+        const list = document.getElementsByTagName('li');
+        for (let but of list) {
+            but.onclick = function () {
+                box.style.backgroundColor = but.textContent;
+            }
+        }
+    </script>
+</body>
+</html>
